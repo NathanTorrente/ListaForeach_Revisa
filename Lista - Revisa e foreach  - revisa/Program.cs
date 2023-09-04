@@ -21,6 +21,9 @@ class Program
        
          * */
 
+        bool contem = listastring.Contains("João");// Verifica se o elemento existe
+        Console.WriteLine(contem);
+
             for (int i = 0; i < listastring.Count; i++) 
             {
               Console.WriteLine(listastring[i]);
