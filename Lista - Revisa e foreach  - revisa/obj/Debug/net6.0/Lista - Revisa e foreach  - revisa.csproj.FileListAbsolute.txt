@@ -1,0 +1,15 @@
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\bin\Debug\net6.0\Lista - Revisa e foreach  - revisa.exe
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\bin\Debug\net6.0\Lista - Revisa e foreach  - revisa.deps.json
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\bin\Debug\net6.0\Lista - Revisa e foreach  - revisa.runtimeconfig.json
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\bin\Debug\net6.0\Lista - Revisa e foreach  - revisa.dll
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\bin\Debug\net6.0\Lista - Revisa e foreach  - revisa.pdb
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\Lista - Revisa e foreach  - revisa.csproj.AssemblyReference.cache
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\Lista - Revisa e foreach  - revisa.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\Lista - Revisa e foreach  - revisa.AssemblyInfoInputs.cache
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\Lista - Revisa e foreach  - revisa.AssemblyInfo.cs
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\Lista - Revisa e foreach  - revisa.csproj.CoreCompileInputs.cache
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\Lista - Revisa e foreach  - revisa.dll
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\refint\Lista - Revisa e foreach  - revisa.dll
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\Lista - Revisa e foreach  - revisa.pdb
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\Lista - Revisa e foreach  - revisa.genruntimeconfig.cache
+C:\Users\2022102020009\Pictures\Lista - Revisa e foreach  - revisa\Lista - Revisa e foreach  - revisa\obj\Debug\net6.0\ref\Lista - Revisa e foreach  - revisa.dll
