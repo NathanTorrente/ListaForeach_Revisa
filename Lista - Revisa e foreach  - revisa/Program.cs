@@ -69,76 +69,69 @@ class Program
     }
     static void ExemploListaObejtos()
     {
-
-        List<Paciente> ListaPacientes = new List<Paciente>();
-        
-       string nome = Console.ReadLine(); // uma forma
-        Paciente p1 = new Paciente(1, "ELIAS", "ID: 000", "Elias@gmail.com", new DateTime(1982, 07, 22));
-        Paciente p2 = new Paciente(2, "Fulano", "ID: 111", "Jorge@gmail.com", new DateTime(2000, 07, 22));
-        Paciente p3 = new Paciente(3, "Mario", "ID: 423", "Elias@gmail.com", new DateTime(1999, 07, 22));
-        Paciente p4 = new Paciente(4, "Cabrero", "ID: 232", "Elias@gmail.com", new DateTime(2008, 07, 22));
-        Paciente p5 = new Paciente(5, "Halerrandro", "ID: 053400", "Elias@gmail.com", new DateTime(1982, 07, 22));
-        Paciente p6 = new Paciente(); // sem o construtor vazio da erro, faça um construtor vazio.
-        p6.nome = Convert.ToString(nome);   // outra forma
-        // Comando - limpar lista "Clear"
-   
-        ListaPacientes.Add(p1);
-        ListaPacientes.Add(p2);
-        ListaPacientes.Add(p3);
-        ListaPacientes.Add(p4);
-        ListaPacientes.Add(p5);
-        ListaPacientes.Add(p6); // ADD - final da lista
-        ListaPacientes.Remove(p5); 
-        ListaPacientes.Insert(0, p5); // ADD no local especificado; 
-                                      // ListaPacientes.Sort(); // orderna os elemtentos
-
-
-        // O método ordeby ordena uma lista a partir de um determinado atributo, esse método
-        // retorna uma lista ordenada (precisa armazenar esse resultado)
-        // ToList() convert o resultado para uma lista
-        // Caso Queira apresentar a nova lista ordenada, somente percorre-la
-        // No exemplo, x.Nome especifica que irá ordenar pelo nome, pode ser qualquer atributo do objeto.
-
-
-        List<Paciente> pOrdenados = ListaPacientes.OrderBy(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
-        List<Paciente> pOrdenadoss = ListaPacientes.OrderByDescending(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
-
-
-        // O método Where é utilizado para selecionar todos que atende alguma expressão
-        // no exemplo abiaxo, seleciona e armazena na lista busca todos os pacientes que possuem
-        // o valor do Id_paciente maior que 2.
-
-        List<Paciente> busca = ListaPacientes.Where(x => x.Id_paciente > 1 && x.nome == "Elias".ToUpper()).ToList(); // Retorna os numeros maiores que 2
-
-        //Paciente pCPF0 = ListaPacientes.Single(x => x.Cpf == "000"); // modo EASY;
-        Paciente pCPF01= ListaPacientes.SingleOrDefault(x => x.Cpf == "333"); // modo livrador de erros, mas pode tb ser try cast.
-        
-        if (pCPF01 != null)
+        while (true)
         {
-            Console.WriteLine(pCPF01.nome);
-            
+            List<Paciente> ListaPacientes = new List<Paciente>();
+
+            string nome = Console.ReadLine(); // uma forma
+            Paciente p1 = new Paciente(1, "ELIAS", "ID: 000", "Elias@gmail.com", new DateTime(1982, 07, 22));
+            Paciente p2 = new Paciente(2, "Fulano", "ID: 111", "Jorge@gmail.com", new DateTime(2000, 07, 22));
+            Paciente p3 = new Paciente(3, "Mario", "ID: 423", "Elias@gmail.com", new DateTime(1999, 07, 22));
+            Paciente p4 = new Paciente(4, "Cabrero", "ID: 232", "Elias@gmail.com", new DateTime(2008, 07, 22));
+            Paciente p5 = new Paciente(5, "Halerrandro", "ID: 053400", "Elias@gmail.com", new DateTime(1982, 07, 22));
+            Paciente p6 = new Paciente(); // sem o construtor vazio da erro, faça um construtor vazio.
+            p6.nome = Convert.ToString(nome);   // outra forma
+                                                // Comando - limpar lista "Clear"
+
+            ListaPacientes.Add(p1);
+            ListaPacientes.Add(p2);
+            ListaPacientes.Add(p3);
+            ListaPacientes.Add(p4);
+            ListaPacientes.Add(p5);
+            ListaPacientes.Add(p6); // ADD - final da lista
+            ListaPacientes.Remove(p5);
+            ListaPacientes.Insert(0, p5); // ADD no local especificado; 
+                                          // ListaPacientes.Sort(); // orderna os elemtentos
+
+
+            // O método ordeby ordena uma lista a partir de um determinado atributo, esse método
+            // retorna uma lista ordenada (precisa armazenar esse resultado)
+            // ToList() convert o resultado para uma lista
+            // Caso Queira apresentar a nova lista ordenada, somente percorre-la
+            // No exemplo, x.Nome especifica que irá ordenar pelo nome, pode ser qualquer atributo do objeto.
+
+
+            List<Paciente> pOrdenados = ListaPacientes.OrderBy(x => x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
+            List<Paciente> pOrdenadoss = ListaPacientes.OrderByDescending(x => x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
+
+
+            // O método Where é utilizado para selecionar todos que atende alguma expressão
+            // no exemplo abiaxo, seleciona e armazena na lista busca todos os pacientes que possuem
+            // o valor do Id_paciente maior que 2.
+
+            List<Paciente> busca = ListaPacientes.Where(x => x.Id_paciente > 1 && x.nome == "Elias".ToUpper()).ToList(); // Retorna os numeros maiores que 2
+            List<Paciente> buscas = ListaPacientes.Where(x => x.nome.ToUpper().StartsWith("A")).ToList(); // Pega o caracter da palavra que a possui na primeira casa.
+            //Paciente pCPF0 = ListaPacientes.Single(x => x.Cpf == "000"); // modo EASY;
+            Paciente pCPF01 = ListaPacientes.SingleOrDefault(x => x.Cpf == "333"); // modo livrador de erros, mas pode tb ser try cast.
+
+            //if (pCPF01 != null)
+            //{
+            //    Console.WriteLine(pCPF01.nome);
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Paciente não encontrado!");
+            //}
+
+
+
+            foreach (Paciente p in pOrdenadoss)
+            {
+                Console.WriteLine($"{p.nome} {p.Cpf} {p.Email} {p.DataNac} ");
+            }
         }
-        else
-        {
-            Console.WriteLine("Paciente não encontrado!");
-        }
-    
-
-       foreach (Paciente p in pOrdenados) // modo dificil
-       {
-       //     if (p.Cpf == "000")
-       //     {
-       //         Paciente pCpf00 = p;
-
-       //     }
-
-
-          Console.WriteLine($"{p.nome} {p.Cpf} {p.Email} {p.DataNac} ");
-       }
-        foreach(Paciente p in pOrdenadoss)
-        {
-            Console.WriteLine($"{p.nome} {p.Cpf} {p.Email} {p.DataNac} ");
-        }
+     
         
     }
 
