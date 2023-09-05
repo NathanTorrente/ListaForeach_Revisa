@@ -73,11 +73,11 @@ class Program
         List<Paciente> ListaPacientes = new List<Paciente>();
         
        string nome = Console.ReadLine(); // uma forma
-        Paciente p1 = new Paciente(1, nome, "5454", "Elias@gmail.com", new DateTime(1982, 07, 22));
-        Paciente p2 = new Paciente(2, "Fulano", "111", "Jorge@gmail.com", new DateTime(2000, 07, 22));
-        Paciente p3 = new Paciente(3, "Mario", "423", "Elias@gmail.com", new DateTime(1999, 07, 22));
-        Paciente p4 = new Paciente(4, "Cabrero", "232", "Elias@gmail.com", new DateTime(2008, 07, 22));
-        Paciente p5 = new Paciente(5, "Halerrandro", "053400", "Elias@gmail.com", new DateTime(1982, 07, 22));
+        Paciente p1 = new Paciente(1, nome, "ID: 000", "Elias@gmail.com", new DateTime(1982, 07, 22));
+        Paciente p2 = new Paciente(2, "Fulano", "ID: 111", "Jorge@gmail.com", new DateTime(2000, 07, 22));
+        Paciente p3 = new Paciente(3, "Mario", "ID: 423", "Elias@gmail.com", new DateTime(1999, 07, 22));
+        Paciente p4 = new Paciente(4, "Cabrero", "ID: 232", "Elias@gmail.com", new DateTime(2008, 07, 22));
+        Paciente p5 = new Paciente(5, "Halerrandro", "ID: 053400", "Elias@gmail.com", new DateTime(1982, 07, 22));
         Paciente p6 = new Paciente(); // sem o construtor vazio da erro, faça um construtor vazio.
         p6.nome = Convert.ToString(nome);   // outra forma
         // Comando - limpar lista "Clear"
@@ -101,17 +101,37 @@ class Program
 
 
         List<Paciente> pOrdenados = ListaPacientes.OrderBy(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
-        List<Paciente> pOrdenadoss = ListaPacientes.OrderBy(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
-        
+        List<Paciente> pOrdenadoss = ListaPacientes.OrderByDescending(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
 
-       foreach(Paciente p in pOrdenados)
+        Paciente pCPF0 = ListaPacientes.Single(x => x.Cpf == "000"); // modo EASY;
+        Paciente pCPF01= ListaPacientes.SingleOrDefault(x => x.Cpf == "333"); // modo livrador de erros, mas pode tb ser try cast.
+        
+        if (pCPF0 != null)
+        {
+            Console.WriteLine(pCPF0.nome);
+            
+        }
+        else
+        {
+            Console.WriteLine("Paciente não encontrado!");
+        }
+        Console.WriteLine(pCPF0.nome);
+
+       foreach (Paciente p in pOrdenados) // modo dificil
        {
-            Console.WriteLine($"{p.nome} {p.Cpf} {p.Email} {p.DataNac} ");
+       //     if (p.Cpf == "000")
+       //     {
+       //         Paciente pCpf00 = p;
+
+       //     }
+
+
+          Console.WriteLine($"{p.nome} {p.Cpf} {p.Email} {p.DataNac} ");
        }
         foreach(Paciente p in pOrdenadoss)
-       {
+        {
             Console.WriteLine($"{p.nome} {p.Cpf} {p.Email} {p.DataNac} ");
-       }
+        }
         
     }
 
