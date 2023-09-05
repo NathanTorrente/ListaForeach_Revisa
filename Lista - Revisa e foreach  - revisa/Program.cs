@@ -1,5 +1,6 @@
 ﻿using Lista___Revisa_e_foreach____revisa;
 using System;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -70,26 +71,47 @@ class Program
     {
 
         List<Paciente> ListaPacientes = new List<Paciente>();
-
-       
-        Paciente p1 = new Paciente(1, "Elias", "5454", "Elias@gmail.com", new DateTime(1982, 07, 22));
-        Paciente p2 = new Paciente(1, "Fulano", "111", "Jorge@gmail.com", new DateTime(2000, 07, 22));
-        Paciente p3 = new Paciente(1, "Mario", "423", "Elias@gmail.com", new DateTime(1999, 07, 22));
-        Paciente p4 = new Paciente(1, "Cabrero", "232", "Elias@gmail.com", new DateTime(2008, 07, 22));
-        Paciente p5 = new Paciente(1, "Halerrandro", "053400", "Elias@gmail.com", new DateTime(1982, 07, 22));
-
-
+        
+       string nome = Console.ReadLine(); // uma forma
+        Paciente p1 = new Paciente(1, nome, "5454", "Elias@gmail.com", new DateTime(1982, 07, 22));
+        Paciente p2 = new Paciente(2, "Fulano", "111", "Jorge@gmail.com", new DateTime(2000, 07, 22));
+        Paciente p3 = new Paciente(3, "Mario", "423", "Elias@gmail.com", new DateTime(1999, 07, 22));
+        Paciente p4 = new Paciente(4, "Cabrero", "232", "Elias@gmail.com", new DateTime(2008, 07, 22));
+        Paciente p5 = new Paciente(5, "Halerrandro", "053400", "Elias@gmail.com", new DateTime(1982, 07, 22));
+        Paciente p6 = new Paciente(); // sem o construtor vazio da erro, faça um construtor vazio.
+        p6.nome = Convert.ToString(nome);   // outra forma
+        // Comando - limpar lista "Clear"
    
         ListaPacientes.Add(p1);
         ListaPacientes.Add(p2);
         ListaPacientes.Add(p3);
         ListaPacientes.Add(p4);
         ListaPacientes.Add(p5);
+        ListaPacientes.Add(p6); // ADD - final da lista
+        ListaPacientes.Remove(p5); 
+        ListaPacientes.Insert(0, p5); // ADD no local especificado; 
+                                      // ListaPacientes.Sort(); // orderna os elemtentos
 
-       foreach(Paciente p in ListaPacientes)
-        {
+
+        // O método ordeby ordena uma lista a partir de um determinado atributo, esse método
+        // retorna uma lista ordenada (precisa armazenar esse resultado)
+        // ToList() convert o resultado para uma lista
+        // Caso Queira apresentar a nova lista ordenada, somente percorre-la
+        // No exemplo, x.Nome especifica que irá ordenar pelo nome, pode ser qualquer atributo do objeto.
+
+
+        List<Paciente> pOrdenados = ListaPacientes.OrderBy(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
+        List<Paciente> pOrdenadoss = ListaPacientes.OrderBy(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
+        
+
+       foreach(Paciente p in pOrdenados)
+       {
             Console.WriteLine($"{p.nome} {p.Cpf} {p.Email} {p.DataNac} ");
-        }
+       }
+        foreach(Paciente p in pOrdenadoss)
+       {
+            Console.WriteLine($"{p.nome} {p.Cpf} {p.Email} {p.DataNac} ");
+       }
         
     }
 

@@ -14,7 +14,9 @@ namespace Lista___Revisa_e_foreach____revisa
         public string Cpf { get; set; }
         public string Email { get; set; }
         public DateTime DataNac { get; set; }
-
+        public Paciente() // Resolveu o erro
+        {  // ele é uma sobrecarga de métodos que possuem chaves distintas, atributos diferentes.
+        }
         public Paciente(int id_paciente, string nome, string cpf, string email, DateTime dataNac)
         {
             Id_paciente = id_paciente;
