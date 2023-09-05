@@ -73,7 +73,7 @@ class Program
         List<Paciente> ListaPacientes = new List<Paciente>();
         
        string nome = Console.ReadLine(); // uma forma
-        Paciente p1 = new Paciente(1, nome, "ID: 000", "Elias@gmail.com", new DateTime(1982, 07, 22));
+        Paciente p1 = new Paciente(1, "ELIAS", "ID: 000", "Elias@gmail.com", new DateTime(1982, 07, 22));
         Paciente p2 = new Paciente(2, "Fulano", "ID: 111", "Jorge@gmail.com", new DateTime(2000, 07, 22));
         Paciente p3 = new Paciente(3, "Mario", "ID: 423", "Elias@gmail.com", new DateTime(1999, 07, 22));
         Paciente p4 = new Paciente(4, "Cabrero", "ID: 232", "Elias@gmail.com", new DateTime(2008, 07, 22));
@@ -103,19 +103,26 @@ class Program
         List<Paciente> pOrdenados = ListaPacientes.OrderBy(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
         List<Paciente> pOrdenadoss = ListaPacientes.OrderByDescending(x=> x.Id_paciente).ToList();   // Ordeby me retorna uma noiva lista ordenada, se passa o atributo, ex: .Nome, e aramazena na variavel pOrdenado
 
-        Paciente pCPF0 = ListaPacientes.Single(x => x.Cpf == "000"); // modo EASY;
+
+        // O método Where é utilizado para selecionar todos que atende alguma expressão
+        // no exemplo abiaxo, seleciona e armazena na lista busca todos os pacientes que possuem
+        // o valor do Id_paciente maior que 2.
+
+        List<Paciente> busca = ListaPacientes.Where(x => x.Id_paciente > 1 && x.nome == "Elias".ToUpper()).ToList(); // Retorna os numeros maiores que 2
+
+        //Paciente pCPF0 = ListaPacientes.Single(x => x.Cpf == "000"); // modo EASY;
         Paciente pCPF01= ListaPacientes.SingleOrDefault(x => x.Cpf == "333"); // modo livrador de erros, mas pode tb ser try cast.
         
-        if (pCPF0 != null)
+        if (pCPF01 != null)
         {
-            Console.WriteLine(pCPF0.nome);
+            Console.WriteLine(pCPF01.nome);
             
         }
         else
         {
             Console.WriteLine("Paciente não encontrado!");
         }
-        Console.WriteLine(pCPF0.nome);
+    
 
        foreach (Paciente p in pOrdenados) // modo dificil
        {
